@@ -10,9 +10,61 @@ Add conditional statements to figure out who wins and keep the records
 When the user quits print a win/loss record
 
 '''
-
-
-
+import random
+done=False
+count=0
+bot_score=0
+user_score=0
+while not done:
+    quit = input("Would you like to quit? (y/n): ")
+    if quit.lower() == "y":
+        print("Done")
+        done=False
+        break
+    else:
+       count+=1
+    answer = random.randrange(1,4)
+    user_answer = int(input("Choose Rock, paper, or scissors. (Rock = 1, paper = 2, scissors = 3: "))
+    if user_answer == 1 and answer == 1:
+        print("You tied!")
+        bot_score+=1
+        user_score+=1
+    elif user_answer == 2 and answer == 2:
+        print("You tied!")
+        bot_score+=1
+        user_score+=1
+    elif user_answer == 3 and answer == 3:
+        print("You tied!")
+        bot_score+=1
+        user_score+=1
+    elif user_answer == 1 and answer == 2:
+        print("You lost!")
+        bot_score+=1
+    elif user_answer == 3 and answer == 1:
+        print("You lost!")
+        bot_score+=1
+    elif user_answer == 2 and answer == 3:
+        print("You lost!")
+        bot_score+=1
+    elif user_answer == 1 and answer == 3:
+        print("You won!")
+        user_score+=1
+    elif user_answer == 2 and answer == 1:
+        print("You won!")
+        user_score+=1
+    elif user_answer == 3 and answer == 2:
+        print("You won!")
+        user_score+=1
+    else:
+        print("Enter a number 1, 2, or 3.")
+print("The bot had " + str(bot_score) + " wins, and you had " + str(user_score) + " wins.")
+if bot_score > user_score:
+    print("You ended up losing the war")
+elif bot_score < user_score:
+    print("You won the war")
+else:
+    print("You guys tied")
+print("You played " + str(count) + " times")
 
 
 
