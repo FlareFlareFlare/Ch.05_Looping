@@ -8,7 +8,7 @@
 
      for i in range(3):
          x = int(input("Enter a number: "))
-         total = total + x
+         total += x
      print("The total is:", str(total))
   
 

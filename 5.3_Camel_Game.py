@@ -403,3 +403,4 @@ if darth_maul == True:
                     print("Unfortunately, the order does not accept what you have done and casts you out.")
                     darth_maul = False
                     break
+#1/1000000 chance of killing jedi order

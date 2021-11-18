@@ -15,16 +15,16 @@ done=False
 count=0
 bot_score=0
 user_score=0
+print("Enter 1 for rock, 2 for paper, 3 for scissors, and 4 to quit")
 while not done:
-    quit = input("Would you like to quit? (y/n): ")
-    if quit.lower() == "y":
+    answer = random.randrange(1,4)
+    user_answer = int(input("Choose Rock, paper, or scissors. (Rock = 1, paper = 2, scissors = 3: "))
+    if user_answer == 4:
         print("Done")
         done=False
         break
-    else:
+    elif user_answer != 4:
        count+=1
-    answer = random.randrange(1,4)
-    user_answer = int(input("Choose Rock, paper, or scissors. (Rock = 1, paper = 2, scissors = 3: "))
     if user_answer == 1 and answer == 1:
         print("You tied!")
         bot_score+=1
@@ -55,8 +55,8 @@ while not done:
     elif user_answer == 3 and answer == 2:
         print("You won!")
         user_score+=1
-    else:
-        print("Enter a number 1, 2, or 3.")
+    elif user_answer != 1 or user_answer != 2 or user_answer != 3 or user_answer != 4:
+        print("Enter a number 1, 2, 3, or 4")
 print("The bot had " + str(bot_score) + " wins, and you had " + str(user_score) + " wins.")
 if bot_score > user_score:
     print("You ended up losing the war")
